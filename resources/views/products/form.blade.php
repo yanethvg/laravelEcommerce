@@ -1,17 +1,21 @@
-{!! Form::open(['url' => '/products', 'class' => 'app-form']) !!}
-<div>
-    {!! Form::label('title', 'Titulo del producto') !!}
-    {!! Form::text('title','' ,['class' => 'form-control']) !!}
-</div>
-<div>
-    {!! Form::label('description', 'Descripción del producto') !!}
-    {!! Form::textarea('description','' ,['class' => 'form-control']) !!}
-</div>
-<div>
-    {!! Form::label('price', 'Precio del Producto') !!}
-    {!! Form::number('price',0 ,['class' => 'form-control']) !!}
-</div>
-<div class="mt-3">
+{!! Form::open(['route' => [$product->url(),$product->id],'method' => $product->method(),'class' => 'app-form']) !!}
+  <div>
+    {!! Form::label('title','Título del producto') !!}
+    {!! Form::text('title',$product->title,['class' => 'form-control']) !!}
+  </div>
+
+  <div>
+    {!! Form::label('description','Descripción del producto') !!}
+    {!! Form::textarea('description',$product->description,['class' => 'form-control']) !!}
+  </div>
+
+  <div>
+    {!! Form::label('price','Precio del producto') !!}
+    {!! Form::number('price',$product->price,['class' => 'form-control']) !!}
+  </div>
+
+  <div class="">
     <input type="submit" value="Guardar" class="btn btn-primary">
-</div>
+  </div>
 {!! Form::close() !!}
+
