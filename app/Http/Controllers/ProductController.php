@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductCollection;
 
 class ProductController extends Controller
 {
@@ -11,15 +12,16 @@ class ProductController extends Controller
         $this->middleware('auth',['except' => ['index','show']]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        //$products = Product::paginate(15);
-        /*
+        $products = Product::paginate(15);
+
         if($request->wantsJson()){
+           // return $products->toJson();
           return new ProductCollection($products);
         }
 
-        return view('products.index',['products' => $products]);*/
+        return view('products.index',['products' => $products]);
 
     }
 
