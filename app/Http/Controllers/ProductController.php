@@ -15,17 +15,6 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $sessionName = 'shopping_cart_id';
-
-        //session($sessionName);
-        $shopping_cart_id =  $request->session()->get($sessionName);
-        //\Session::get($sessionName)
-
-        //buscando si existe la sesion
-        $shopping_cart = ShoppingCart::findOrCreateById($shopping_cart_id);
-
-        //ingresando la session en el navegador
-        $request->session()->put($sessionName,$shopping_cart->id);
 
         $products = Product::paginate(15);
 
@@ -34,7 +23,7 @@ class ProductController extends Controller
           return new ProductCollection($products);
         }
 
-        return view('products.index',['products' => $products, 'shopping_cart' => $shopping_cart]);
+        return view('products.index',['products' => $products]);
 
     }
 
