@@ -24,8 +24,8 @@
             'Content-Type': 'application/json'
           }
         }).then(()=>{
-         // window.store.commit("increment");
-         console.log('Se agrego el producto');
+         window.store.commit("increment");
+         //console.log('Se agrego el producto');
         })
       }
     }
