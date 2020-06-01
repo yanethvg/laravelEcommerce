@@ -20,9 +20,12 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('products-component', require('./components/products/ProductsComponent.vue').default);
 
+Vue.component('products-component', require('./components/products/ProductsComponent.vue').default);
 Vue.component('product-card-component', require('./components/products/ProductCardComponent.vue').default);
+
+Vue.component('add-product-btn', require('./components/products/AddToCartComponent.vue').default);
+
 Vue.component('material-transition-group',require('./components/animations/MaterialCollectionComponent.vue').default);
 
 /**
