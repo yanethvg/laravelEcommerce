@@ -49,8 +49,9 @@ class AppServiceProvider extends ServiceProvider
 
             $shopping_cart = ShoppingCart::findOrCreateById($shopping_cart_id);
             \Session::put($sessionName,$shopping_cart->id);
-
-            $view->with('productsCount', $shopping_cart->id);
+            //enviandole el conteo de productos no el id
+            //$view->with('productsCount', $shopping_cart->id);
+            $view->with('productsCount', $shopping_cart->productsCount());
         });
     }
 }
