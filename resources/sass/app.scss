@@ -19,3 +19,23 @@
 .text-center .pagination {
     justify-content: center;
 }
+
+.payments {
+    img {
+        margin-bottom: 30px;
+        display: block;
+    }
+}
+
+.card-product {
+    max-width: 400px;
+    margin: 1em 0;
+    strong {
+        text-transform: uppercase;
+    }
+    &.total {
+        margin-top: 2em;
+        padding-top: 2em;
+        border-top: solid 1px #eee;
+    }
+}

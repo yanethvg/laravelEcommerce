@@ -33,14 +33,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <product-counter-component :count="{{$productsCount}}"></product-counter-component>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-link">
-
+                            <product-counter-component :count="{{$productsCount}}"></product-counter-component>
                         </li>
                         @guest
                             <li class="nav-item">
